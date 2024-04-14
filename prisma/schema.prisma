@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,14 @@ generator client {
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Event {
+  id               String  @id @default(uuid())
+  tittle           String
+  details          String?
+  slug             String  @unique
+  maximumAttendees Int?    @map("maximum_attendees")
+
+  @@map("events")
 }

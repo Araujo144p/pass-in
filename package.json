@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch --env-file .env src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
+    "@prisma/client": "^5.12.1",
     "fastify": "^4.26.2"
   }
 }
