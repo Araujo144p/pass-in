@@ -1,0 +1,8 @@
+POST http://localhost:3030/events
+Content-Type: application/json
+
+{
+    "title": "Ignite United 2 NWL",
+    "details": null ,
+    "maximumAttendees": 100
+}
