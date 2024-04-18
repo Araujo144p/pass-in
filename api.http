@@ -6,3 +6,13 @@ Content-Type: application/json
     "details": null ,
     "maximumAttendees": 100
 }
+
+###
+
+POST http://localhost:3030/events/07be2def-ae8c-46df-835d-bc1423889eaa/attendee
+Content-Type: application/json
+
+{
+    "name": "Caua Gomes",
+    "email":"kircaua5661@gmail.com"
+}
