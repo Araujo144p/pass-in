@@ -61,7 +61,10 @@ export async function registerForEvent(app: FastifyInstance){
             })
         ])
 
-        if(event?.maximumAttendees && event.maximumAttendees >= amountOfAttendeesForEvent){
+        console.log(event?.maximumAttendees + ' - maximo de participante')
+        console.log(amountOfAttendeesForEvent + ' - quantos participante tem no evento')
+
+        if(event?.maximumAttendees && event.maximumAttendees <= amountOfAttendeesForEvent){
             throw new Error('the maximum number of attendees for this event has been reached.')
         }
 
