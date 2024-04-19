@@ -2,17 +2,27 @@ POST http://localhost:3030/events
 Content-Type: application/json
 
 {
-    "title": "Ignite United 2 NWL",
+    "title": "NWL UNITED",
     "details": null ,
-    "maximumAttendees": 100
+    "maximumAttendees": 2
 }
 
 ###
 
-POST http://localhost:3030/events/07be2def-ae8c-46df-835d-bc1423889eaa/attendee
+POST http://localhost:3030/events/f9c44e57-9713-468d-b03d-0d2c2cbf4e10/attendee
 Content-Type: application/json
 
 {
     "name": "Caua Gomes",
-    "email":"kircaua5661@gmail.com"
+    "email":"araujodev766@gmail.com"
 }
+
+### 
+
+GET http://localhost:3030/event/f9c44e57-9713-468d-b03d-0d2c2cbf4e10
+Content-Type: application/json
+
+###
+
+GET http://localhost:3030/attendee/1
+Content-Type: application/json
