@@ -1,6 +1,5 @@
 import { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { generateSlug } from '../utils/generate-slug'
 import { prisma } from '../lib/prisma'
 import { FastifyInstance } from 'fastify'
 
@@ -60,9 +59,6 @@ export async function registerForEvent(app: FastifyInstance){
                 }
             })
         ])
-
-        console.log(event?.maximumAttendees + ' - maximo de participante')
-        console.log(amountOfAttendeesForEvent + ' - quantos participante tem no evento')
 
         if(event?.maximumAttendees && event.maximumAttendees <= amountOfAttendeesForEvent){
             throw new Error('the maximum number of attendees for this event has been reached.')

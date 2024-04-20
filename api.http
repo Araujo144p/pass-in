@@ -2,14 +2,14 @@ POST http://localhost:3030/events
 Content-Type: application/json
 
 {
-    "title": "NWL UNITED",
+    "title": "testando rotas",
     "details": null ,
     "maximumAttendees": 2
 }
 
 ###
 
-POST http://localhost:3030/events/f9c44e57-9713-468d-b03d-0d2c2cbf4e10/attendee
+POST http://localhost:3030/events/b267710c-8d56-4663-ac0e-3f8a65fe1ddf/attendee
 Content-Type: application/json
 
 {
@@ -19,10 +19,10 @@ Content-Type: application/json
 
 ### 
 
-GET http://localhost:3030/event/f9c44e57-9713-468d-b03d-0d2c2cbf4e10
+GET http://localhost:3030/event/b267710c-8d56-4663-ac0e-3f8a65fe1ddf
 Content-Type: application/json
 
 ###
 
-GET http://localhost:3030/attendee/1
+GET http://localhost:3030/attendee/4
 Content-Type: application/json
