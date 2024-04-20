@@ -6,7 +6,7 @@ import { prisma } from "../lib/prisma";
 export async function getAttendeesBadge(app: FastifyInstance){
     app
     .withTypeProvider<ZodTypeProvider>()
-    .get('/attendee/:attendeeId', {
+    .get('/attendee/:attendeeId/badge', {
         schema: { 
             params: z.object({
                 attendeeId: z.coerce.number().int()
@@ -16,7 +16,8 @@ export async function getAttendeesBadge(app: FastifyInstance){
                     attendee: z.object({
                         name: z.string(),
                         email: z.string(),
-                        event_name: z.string(),
+                        eventName: z.string(),
+                        checkInURL: z.string().url(),
                     })
                 })
             }
@@ -43,11 +44,15 @@ export async function getAttendeesBadge(app: FastifyInstance){
             throw new Error('atendee not found.')
         }
 
+        const baseURL = `${request.protocol}://${request.hostname}`
+        const checkInURL = new URL(`/attendee/${attendeeId}/check-in`, baseURL)
+
         reply.status(200).send({ 
             attendee: {
                 name: attendee.name,
                 email: attendee.email,
-                event_name: attendee.event.tittle
+                eventName: attendee.event.tittle,
+                checkInURL: checkInURL.toString()
             } 
         })
 
