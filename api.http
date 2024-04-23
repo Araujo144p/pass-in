@@ -2,27 +2,36 @@ POST http://localhost:3030/events
 Content-Type: application/json
 
 {
-    "title": "testando rotas",
+    "title": "TESTE 2",
     "details": null ,
     "maximumAttendees": 2
 }
 
 ###
 
-POST http://localhost:3030/events/b267710c-8d56-4663-ac0e-3f8a65fe1ddf/attendee
+POST http://localhost:3030/events/0eeb5d63-cc5c-49b5-82ee-a4cc94d6b49d/attendee
 Content-Type: application/json
 
 {
-    "name": "Caua Gomes",
-    "email":"araujodev766@gmail.com"
+    "name": "Daniel",
+    "email":"teste6e@gmail.com"
 }
 
 ### 
 
-GET http://localhost:3030/event/b267710c-8d56-4663-ac0e-3f8a65fe1ddf
+GET http://localhost:3030/event/0eeb5d63-cc5c-49b5-82ee-a4cc94d6b49d
 Content-Type: application/json
 
 ###
 
-GET http://localhost:3030/attendee/4
+GET http://localhost:3030/attendee/8/badge
 Content-Type: application/json
+
+###
+
+GET http://localhost:3030/attendee/8/check-in
+Content-Type: application/json
+
+###
+
+GET http://localhost:3030/events/0eeb5d63-cc5c-49b5-82ee-a4cc94d6b49d/attendees
