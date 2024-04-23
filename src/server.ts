@@ -8,6 +8,7 @@ import { getEvent } from './routes/get-events'
 import { getAttendeesBadge } from './routes/get-attendees-badge'
 import { checkIn } from './routes/check-in'
 import { getEventAttendee } from './routes/get-event-attendee'
+import { errorHandler } from './error-handler'
 
 
 const app = fastify()
@@ -38,6 +39,8 @@ app.register(getEvent)
 app.register(getAttendeesBadge)
 app.register(checkIn)
 app.register(getEventAttendee)
+
+app.setErrorHandler(errorHandler)
 
 app.listen({port: 3030}).then(() =>{
     console.log('server is running!')
