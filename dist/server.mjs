@@ -13,7 +13,7 @@ import {
 import "./chunk-KDMJHR3Z.mjs";
 import {
   getAttendeesBadge
-} from "./chunk-WRT2BTCZ.mjs";
+} from "./chunk-R5T677MV.mjs";
 import {
   getEventAttendee
 } from "./chunk-EVQHWX5H.mjs";
